@@ -1,5 +1,5 @@
 {
-  "version": "1.9.4",
-  "url": "https://github.com/yuzrey2706/ecay/releases/download/v1.9.4/ECAY-Setup-1.9.4.exe",
-  "notes": "Toute l’interface a été refaite : surfaces en graphite neutre, rayons resserrés, ombres sobres, fond désaturé, barre latérale et lecteur aplaties. L’équipe passe à trois avec CESKA, et l’on clique sur une fiche pour ouvrir le profil. Les playlists deviennent partageables : bouton Publique / Privée à effet réel, lien ecay://playlist/… qui embarque les titres, et import par collage dans Ma bibliothèque."
+  "version": "1.9.5",
+  "url": "https://github.com/yuzrey2706/ecay/releases/download/v1.9.5/ECAY-Setup-1.9.5.exe",
+  "notes": "Le fond d’écran est de nouveau affiché en couleur : les réglages de thème (fond, voile, flou, densité, couleur d’accent) sont tous là et restent maîtres. Interface signature : titres de page en dégradé, onglet actif et boutons principaux qui glissent, filet du lecteur animé. La barre latérale se place à gauche en rail sanglé ou à droite en carte flottante — deux styles différents, réglables dans Réglages → Apparence. Liens de playlist raccourcis : 2535 caractères deviennent 28, et coller ce lien court dans l’application importe la playlist pour l’écouter."
 }
