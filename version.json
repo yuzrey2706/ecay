@@ -1,5 +1,5 @@
 {
-  "version": "1.9.8",
-  "url": "https://github.com/yuzrey2706/ecay/releases/download/v1.9.8/ECAY-Setup-1.9.8.exe",
-  "notes": "Deux flèches dans la barre de titre : retour en arrière et avancer, sans rien refaire — avec Alt+← et Alt+→ en plus. Créer son compte ne se termine plus jamais sur un code à trois chiffres : si le serveur refuse, l’application demande à la base ce qui se passe, répare elle-même quand c’est son propre ligne, et dit clairement quand le @ est déjà pris par quelqu’un d’autre. La fenêtre se déplace en attrapant n’importe quel endroit libre de la barre de titre ou du menu latéral, et un double-clic dessus l’agrandit. Enfin la marque s’appelle Olivia : logo refait, titre, écran de démarrage et écran de connexion suivent."
+  "version": "2.0.0",
+  "url": "https://github.com/yuzrey2706/ecay/releases/download/v2.0.0/ECAY-Setup-2.0.0.exe",
+  "notes": "Grand numéro rond : ECAY retrouve son nom et son logo partout. Trois nouveautés. Thème clair — Réglages → Apparence → Mode : Sombre, Clair ou Système (la couleur suit Windows) ; voile laiteux et verre blanc, ton image de fond reste intacte. Carte de partage — le bouton 🖼 de la barre du bas et celui des lignes dessinent un carré 1080×1080 avec la pochette, le titre et l’artiste, et te laissent l’enregistrer où tu veux (le dialogue est celui de Windows). Webradios — neuf stations en direct dans le menu latéral, flux publics sans compte ni clé, et la barre de progression reste propre sur un flux sans fin."
 }
