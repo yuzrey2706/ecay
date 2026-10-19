@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ECAY — lecteur musical</title>
+<meta name="description" content="ECAY : lecteur musical pour Windows. Effets sonores en direct, minuteur de sommeil, connexion Discord, espace créateurs." />
+<link rel="icon" href="favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --accent:#a855f7; --accent-hi:#c084fc; --accent-lo:#7c3aed;
+  --text:#f7f4ff; --text-2:rgba(247,244,255,.74); --text-dim:rgba(247,244,255,.52);
+  --bg:#08040f; --glass:rgba(18,10,32,.58); --border:rgba(196,145,255,.16);
+  --radius:20px; --radius-lg:28px;
+  --font:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);color:var(--text);
+  background:var(--bg);
+  background-image:
+    radial-gradient(900px 520px at 12% -8%, rgba(124,58,237,.34), transparent 62%),
+    radial-gradient(760px 460px at 92% 4%, rgba(192,132,252,.20), transparent 60%),
+    radial-gradient(1000px 700px at 50% 108%, rgba(76,15,148,.40), transparent 64%);
+  background-attachment:fixed;
+  line-height:1.6;overflow-x:hidden;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+
+/* ---------- barre ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(18px) saturate(150%);
+  background:rgba(8,4,15,.72);
+  border-bottom:1px solid var(--border);
+}
+.nav{display:flex;align-items:center;gap:16px;height:66px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:17px;letter-spacing:.4px;text-decoration:none}
+.brand img{width:30px;height:30px;border-radius:8px;object-fit:cover;background:#14082a}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:22px;font-size:14px;font-weight:600}
+.nav-links a{color:var(--text-2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:760px){.nav-links a:not(.btn){display:none}}
+
+/* ---------- boutons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 24px;border-radius:999px;
+  font-family:var(--font);font-size:14.5px;font-weight:700;
+  text-decoration:none;cursor:pointer;border:1px solid transparent;
+  transition:transform .22s cubic-bezier(.22,.61,.36,1),box-shadow .22s,background .22s;
+}
+.btn-primary{
+  background:linear-gradient(120deg,var(--accent-lo),var(--accent) 55%,var(--accent-hi));
+  color:#0b0d0a;
+  box-shadow:0 12px 30px rgba(124,58,237,.50),0 0 16px rgba(168,85,247,.36);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(124,58,237,.62),0 0 22px rgba(168,85,247,.50)}
+.btn-ghost{background:rgba(255,255,255,.06);border-color:var(--border);color:var(--text)}
+.btn-ghost:hover{background:rgba(255,255,255,.11);transform:translateY(-2px)}
+.btn-sm{padding:9px 18px;font-size:13.5px}
+
+/* ---------- héros ---------- */
+.hero{padding:86px 0 54px;text-align:center}
+.kicker{
+  display:inline-block;padding:7px 16px;margin-bottom:22px;
+  border-radius:999px;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+  color:var(--accent-hi);background:rgba(124,58,237,.18);border:1px solid rgba(168,85,247,.34);
+}
+h1{font-size:clamp(40px,7vw,74px);font-weight:900;line-height:1.03;letter-spacing:-1.6px}
+h1 .grad{
+  background:linear-gradient(100deg,#c084fc,#f0abfc 45%,#a855f7);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.sub{max-width:660px;margin:22px auto 0;font-size:17.5px;color:var(--text-2)}
+.cta{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.meta{margin-top:20px;font-size:13px;color:var(--text-dim)}
+.meta b{color:var(--text-2);font-weight:700}
+
+/* ---------- capture ---------- */
+.shot{
+  margin:52px auto 0;max-width:1000px;
+  border-radius:var(--radius-lg);
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+  box-shadow:0 46px 100px rgba(46,10,92,.66),0 0 0 1px rgba(168,85,247,.20);
+  overflow:hidden;
+}
+.shot img{display:block;width:100%}
+
+/* ---------- sections ---------- */
+section{padding:78px 0}
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.8px}
+.sec-head p{margin-top:12px;color:var(--text-2);font-size:16px;max-width:620px;margin-left:auto;margin-right:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:16px}
+.card{
+  padding:24px;border-radius:var(--radius);
+  background:var(--glass);border:1px solid var(--border);
+  backdrop-filter:blur(16px);
+  transition:transform .26s cubic-bezier(.2,.8,.2,1),border-color .26s,box-shadow .26s;
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(192,132,252,.44);box-shadow:0 22px 48px rgba(46,10,92,.52)}
+.ico{
+  width:42px;height:42px;border-radius:13px;
+  display:grid;place-items:center;font-size:19px;
+  background:rgba(124,58,237,.22);border:1px solid rgba(168,85,247,.32);
+  margin-bottom:15px;
+}
+.card h3{font-size:16.5px;font-weight:700;margin-bottom:7px}
+.card p{font-size:14px;color:var(--text-2)}
+
+/* ---------- équipe ---------- */
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:840px;margin:0 auto}
+.tcard{
+  padding:26px 22px;text-align:center;border-radius:var(--radius);
+  background:var(--glass);border:1px solid var(--border);backdrop-filter:blur(16px);
+  transition:transform .26s cubic-bezier(.2,.8,.2,1),border-color .26s;
+}
+.tcard:hover{transform:translateY(-5px);border-color:rgba(192,132,252,.46)}
+.tcard img{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:center 22%;border:2px solid rgba(245,197,66,.6);box-shadow:0 0 20px rgba(234,179,8,.32);margin-bottom:14px}
+.tcard .nm{font-size:17px;font-weight:800}
+.tcard .rl{font-size:13px;color:var(--accent-hi);font-weight:600;margin-top:3px}
+.tcard .bd{margin-top:12px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.tag{padding:5px 11px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid transparent}
+.tag-dev{background:rgba(56,189,248,.20);border-color:rgba(125,211,252,.42);color:#bfe9ff}
+.tag-crown{background:rgba(250,204,21,.20);border-color:rgba(253,224,71,.46);color:#ffe9a3}
+
+/* ---------- téléchargement ---------- */
+.dl{
+  max-width:760px;margin:0 auto;text-align:center;
+  padding:44px 34px;border-radius:var(--radius-lg);
+  background:linear-gradient(150deg,rgba(124,58,237,.26),rgba(18,10,32,.62));
+  border:1px solid rgba(168,85,247,.34);
+  box-shadow:0 34px 78px rgba(46,10,92,.60);
+}
+.dl h2{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.7px}
+.dl p{margin-top:12px;color:var(--text-2);font-size:15.5px}
+.dl .btn{margin-top:26px}
+.dl .note{margin-top:16px;font-size:12.5px;color:var(--text-dim)}
+
+/* ---------- compteurs ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;max-width:880px;margin:0 auto}
+.stat{
+  padding:30px 22px;text-align:center;border-radius:var(--radius);
+  background:var(--glass);border:1px solid var(--border);backdrop-filter:blur(16px);
+  transition:transform .26s cubic-bezier(.2,.8,.2,1),border-color .26s;
+}
+.stat:hover{transform:translateY(-4px);border-color:rgba(192,132,252,.44)}
+.stat-num{
+  font-size:clamp(32px,5vw,46px);font-weight:900;letter-spacing:-1.6px;line-height:1;
+  background:linear-gradient(100deg,#c084fc,#f0abfc 50%,#a855f7);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  /* chiffres de largeur fixe : le compteur ne tremble pas en montant */
+  font-variant-numeric:tabular-nums;
+}
+.stat-lbl{margin-top:11px;font-size:13px;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.9px}
+.stat-sub{margin-top:5px;font-size:12.5px;color:var(--text-dim)}
+.stats-note{max-width:660px;margin:26px auto 0;text-align:center;font-size:13px;color:var(--text-dim);line-height:1.6}
+
+footer{padding:44px 0 56px;border-top:1px solid var(--border);text-align:center;color:var(--text-dim);font-size:13px}
+footer b{color:var(--text-2)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="logo.png" alt="" onerror="this.style.display='none'"/> ECAY</a>
+    <nav class="nav-links">
+      <a href="#fonctions">Fonctions</a>
+      <a href="#equipe">Équipe</a>
+      <a href="#chiffres">Chiffres</a>
+      <a class="btn btn-primary btn-sm" href="#telecharger">Télécharger</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <span class="kicker">Version 1.9.3</span>
+    <h1>Le lecteur qui<br/><span class="grad">écoute aussi tes oreilles</span></h1>
+    <p class="sub">
+      ECAY joue ta musique, la transforme en direct et te laisse en disposer :
+      effets sonores, minuteur de sommeil, connexion Discord et espace créateurs — le tout sur ta machine.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/yuzrey2706/ecay/releases/download/v1.9.3/ECAY-Setup-1.9.3.exe" download>⬇ Télécharger pour Windows</a>
+      <a class="btn btn-ghost" href="#fonctions">Voir les fonctions</a>
+    </div>
+    <p class="meta">Installation simple · <b id="ver">1.9.3</b> · aucun compte requis</p>
+
+    <div class="shot">
+      <img src="captures/accueil.png" alt="Capture d’écran d’ECAY" onerror="this.closest('.shot').style.display='none'"/>
+    </div>
+  </section>
+
+  <section id="fonctions" class="wrap">
+    <div class="sec-head">
+      <h2>Ce que fait ECAY</h2>
+      <p>Chaque fonction s’applique pendant que la musique joue : on bouge un curseur, le son change sur-le-champ.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="ico">🎛</div><h3>Effets sonores</h3><p>Slow mode, nightcore, 808, radio, téléphone, écho, réverbération. La voix suit la vitesse, comme sur une platine.</p></div>
+      <div class="card"><div class="ico">🌙</div><h3>Minuteur de sommeil</h3><p>De 15 minutes à 1 h 30, ou à la fin du morceau — jamais une phrase coupée en plein milieu.</p></div>
+      <div class="card"><div class="ico">💬</div><h3>Connexion Discord</h3><p>Ta bannière et ton avatar Discord affichés dans l’application après autorisation.</p></div>
+      <div class="card"><div class="ico">✍</div><h3>Studio créateur</h3><p>Crée un compte créateur : nom, photo, bannière, présentation. Publications, likes, réponses et abonnements.</p></div>
+      <div class="card"><div class="ico">🔎</div><h3>Rechercher et suivre</h3><p>Cherche un créateur par nom ou par présentation, ouvre son profil, suis-le. Ses publications remontent en tête de l’actualité.</p></div>
+      <div class="card"><div class="ico">💬</div><h3>Salon PourEcay</h3><p>La salle des idées. Ce que tu veux voir dans ECAY, tu le déposes là : chaque proposition garde son fil à part, sans polluer l’actualité.</p></div>
+      <div class="card"><div class="ico">📈</div><h3>Tableau de bord</h3><p>Tes vues sur la journée, la semaine et le tout, en classement. Questions, sons publiés, créateurs à découvrir.</p></div>
+      <div class="card"><div class="ico">👑</div><h3>ECAY Équipe</h3><p>La fiche du fondateur, en relief 3D : la carte s’incline au passage de la souris, les badges bougent tout seuls.</p></div>
+      <div class="card"><div class="ico">⇅</div><h3>File réordonnable</h3><p>Déplace les morceaux à la main dans la file d’attente. L’écoute en cours suit le titre, pas sa position.</p></div>
+      <div class="card"><div class="ico">⚡</div><h3>Basse et ampli</h3><p>Un bouton pour pousser les graves, un autre pour l’égaliseur. Effet immédiat, sans réglage à comprendre.</p></div>
+      <div class="card"><div class="ico">✨</div><h3>Mise à jour automatique</h3><p>ECAY vérifie la nouvelle version au démarrage et te propose l’installation. Tu n’as rien à chercher.</p></div>
+    </div>
+  </section>
+
+  <section id="equipe" class="wrap">
+    <div class="sec-head">
+      <h2>L’équipe</h2>
+      <p>ECAY est écrit, dessiné et publié par une seule personne.</p>
+    </div>
+    <div class="team">
+      <div class="tcard">
+        <img src="https://i.postimg.cc/Z5HNMKxh/69eec792f2a94d107fc80e11c5243681.jpg" alt="DECAY"
+             onerror="this.src='logo.png'"/>
+        <div class="nm">DECAY</div>
+        <div class="rl">Fondateur et développeur</div>
+        <div class="bd">
+          <span class="tag tag-crown">👑 Fondateur</span>
+          <span class="tag tag-dev">⚙ Développeur</span>
+        </div>
+      </div>
+      <div class="tcard">
+        <img src="https://i.postimg.cc/wvppPJc8/Capture-d-ecran-2026-10-19-001023.png" alt="AZE"
+             onerror="this.src='logo.png'"/>
+        <div class="nm">AZE</div>
+        <div class="rl">Co-fondateur et visualisateur des idées</div>
+        <div class="bd">
+          <span class="tag tag-crown">👑 Co-fondateur</span>
+          <span class="tag tag-dev">🧠 Idées</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="telecharger" class="wrap">
+    <div class="dl">
+      <h2>Installer ECAY</h2>
+      <p>Télécharge l’installateur, lance-le, c’est terminé. Aucun compte, aucune publicité, aucun envoi de données.</p>
+      <a class="btn btn-primary" href="https://github.com/yuzrey2706/ecay/releases/download/v1.9.3/ECAY-Setup-1.9.3.exe" download>⬇ ECAY-Setup-1.9.3.exe</a>
+      <p class="note">Windows 10 et 11 · 64 bits · taille affichée par ton navigateur au téléchargement</p>
+    </div>
+  </section>
+
+  <section id="chiffres" class="wrap">
+    <div class="sec-head">
+      <h2>La dernière version, en chiffres</h2>
+      <p>Ces compteurs viennent de la page Releases de GitHub — relevés à chaque ouverture de cette page.</p>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num" id="st-dl">—</div>
+        <div class="stat-lbl">Téléchargements</div>
+        <div class="stat-sub">installateur 1.9.3</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="st-rel">—</div>
+        <div class="stat-lbl">Versions publiées</div>
+        <div class="stat-sub">dépôt public yuzrey2706/ecay</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="st-ver">1.9.3</div>
+        <div class="stat-lbl">Version en ligne</div>
+        <div class="stat-sub">proposée automatiquement à l’ouverture d’ECAY</div>
+      </div>
+    </div>
+    <p class="stats-note">
+      Ce site est une page statique hébergée sur GitHub Pages : elle ne compte
+      pas les visiteurs et ne conserve aucun identifiant. Les téléchargements
+      affichés proviennent du dépôt public, où l’application est distribuée.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>ECAY</b> — lecteur musical pour Windows.<br/>
+    Version <span id="ver2">1.9.3</span> · écrit par DECAY.
+  </div>
+</footer>
+
+<script>
+// Le numéro de version vient de version.json : une seule source de vérité,
+// la page ne peut pas annoncer une version que le flux ne sert pas.
+fetch('version.json',{cache:'no-store'})
+  .then(function(r){return r.ok?r.json():null;})
+  .then(function(d){
+    if(!d||!d.version)return;
+    var v=String(d.version);
+    ['ver','ver2'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=v;});
+    document.querySelector('.kicker').textContent='Version '+v;
+    // Lien absolu vers la Release : l'installateur ne vit pas sur ce site,
+    // il vit dans les dépôts GitHub. Attribuer un chemin local renverrait
+    // une page 404.
+    var lien=(d.url&&/^https?:\/\//i.test(d.url))
+      ? d.url
+      : 'https://github.com/yuzrey2706/ecay/releases/download/v'+v+'/ECAY-Setup-'+v+'.exe';
+    document.querySelectorAll('a[href^="ECAY-Setup-"]').forEach(function(a){
+      a.href=lien;
+      a.removeAttribute('download');   // hors-domaine : l'attribut est ignoré
+      if(/ECAY-Setup-/.test(a.textContent))a.textContent='⬇ ECAY-Setup-'+v+'.exe';
+    });
+  })
+  .catch(function(){});
+</script>
+
+<script>
+/* ------------------------------------------------------------------
+   Chiffres publiés par GitHub.
+
+   Ce site est une page statique hébergée sur GitHub Pages : il n'a pas
+   de serveur, donc il ne peut rien compter lui-même. On lit l'API
+   publique du dépôt, qui donne le nombre réel de téléchargements de
+   l'installateur et le nombre de versions publiées — sans backend et
+   sans aucun identifiant de visiteur.
+
+   Un seul appel fait les deux chiffres : l'API limite les requêtes
+   non authentifiées, et une page rafraîchie toutes les quelques
+   secondes finirait par être refusée.
+------------------------------------------------------------------ */
+(function(){
+  var DEPOT='yuzrey2706/ecay';
+  var depart={dl:null,rel:null};   // null = première lecture : on anime
+
+  function monter(n,el){
+    if(!el) return;
+    var d0=0,duree=900,t0=null;
+    (function pas(t){
+      if(t0===null) t0=t;
+      var p=Math.min(1,(t-t0)/duree);
+      var e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(d0+(n-d0)*e).toLocaleString('fr-FR');
+      if(p<1) requestAnimationFrame(pas);
+    })(performance.now());
+  }
+
+  function poser(n,id){
+    var el=document.getElementById(id);
+    if(!el) return;
+    if(depart[id]===null) monter(n,el);
+    else el.textContent=n.toLocaleString('fr-FR');
+    depart[id]=n;
+  }
+
+  fetch('https://api.github.com/repos/'+DEPOT+'/releases?per_page=100',{cache:'no-store'})
+    .then(function(r){return r.ok?r.json():null;})
+    .then(function(rel){
+      if(!Array.isArray(rel)) return;
+      poser(rel.length,'st-rel');
+      var latest=rel[0];                       // triées de la plus récente
+      if(!latest) return;
+      var total=0;
+      (latest.assets||[]).forEach(function(a){ total+=a.download_count||0; });
+      poser(total,'st-dl');
+      if(latest.tag_name){
+        var carte=document.getElementById('st-dl').parentNode;
+        var sous=carte.querySelector('.stat-sub');
+        if(sous) sous.textContent='installateur '+String(latest.tag_name).replace(/^v/,'');
+      }
+    })
+    .catch(function(){/* GitHub injoignable : les tirets restent, la page aussi */});
+})();
+</script>
+</body>
+</html>
