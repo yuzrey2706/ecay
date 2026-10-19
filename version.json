@@ -1,5 +1,5 @@
 {
-  "version": "1.9.6",
-  "url": "https://github.com/yuzrey2706/ecay/releases/download/v1.9.6/ECAY-Setup-1.9.6.exe",
-  "notes": "Espace créateurs enfin connecté : tu choisis ton @ une fois, tu le donnes à quelqu’un, il le tape dans la recherche et il te suit — et ça marche entre appareils, plus seulement sur le même PC. La recherche consulte deux bassins : ce qui est sur ta machine, et l’annuaire partagé hébergé en région Paris. Touche de l’overlay réglable dans Réglages : clique sur Changer, appuie sur la touche que tu veux, elle fonctionne même en plein jeu et une touche déjà prise est refusée sans casser l’ancienne."
+  "version": "1.9.7",
+  "url": "https://github.com/yuzrey2706/ecay/releases/download/v1.9.7/ECAY-Setup-1.9.7.exe",
+  "notes": "Créer son compte prend enfin tout d’un coup : la photo, le nom affiché, la présentation et le @ partent ensemble, plus jamais un profil à moitié vide. Les photos sont hébergées et servies par ECAY, donc elles apparaissent aussi sur l’appareil de la personne qui te cherche. Chaque compte a sa fiche publique — photo, nom, @, abonnés — qu’on ouvre d’un clic depuis la recherche. « Mon compte » réunit ce qu’on voit, ce qu’on change, et la liste de ceux qui te suivent comme celle de ceux que tu suis."
 }
