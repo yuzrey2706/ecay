@@ -1,5 +1,5 @@
 {
-  "version": "1.9.7",
-  "url": "https://github.com/yuzrey2706/ecay/releases/download/v1.9.7/ECAY-Setup-1.9.7.exe",
-  "notes": "Créer son compte prend enfin tout d’un coup : la photo, le nom affiché, la présentation et le @ partent ensemble, plus jamais un profil à moitié vide. Les photos sont hébergées et servies par ECAY, donc elles apparaissent aussi sur l’appareil de la personne qui te cherche. Chaque compte a sa fiche publique — photo, nom, @, abonnés — qu’on ouvre d’un clic depuis la recherche. « Mon compte » réunit ce qu’on voit, ce qu’on change, et la liste de ceux qui te suivent comme celle de ceux que tu suis."
+  "version": "1.9.8",
+  "url": "https://github.com/yuzrey2706/ecay/releases/download/v1.9.8/ECAY-Setup-1.9.8.exe",
+  "notes": "Deux flèches dans la barre de titre : retour en arrière et avancer, sans rien refaire — avec Alt+← et Alt+→ en plus. Créer son compte ne se termine plus jamais sur un code à trois chiffres : si le serveur refuse, l’application demande à la base ce qui se passe, répare elle-même quand c’est son propre ligne, et dit clairement quand le @ est déjà pris par quelqu’un d’autre. La fenêtre se déplace en attrapant n’importe quel endroit libre de la barre de titre ou du menu latéral, et un double-clic dessus l’agrandit. Enfin la marque s’appelle Olivia : logo refait, titre, écran de démarrage et écran de connexion suivent."
 }
