@@ -1,5 +1,5 @@
 {
-  "version": "2.6.0",
-  "url": "https://github.com/yuzrey2706/ecay/releases/download/v2.6.0/ECAY-Setup-2.6.0.exe",
-  "notes": "ECAY 2.6.0 — la Boutique DLL et la monnaie ECAZY. Un nouvel univers où plus tu restes sur l’application, plus tu gagnes : 18 DLL officielles (Basse Profonde offerte, Sub Titanic, Métal Enfer, Stade Géant, Cave du Dragon, Nightcore Extrême, Slowed + Reverb, Bitcrusher 8-bit…) achetables en ECAZY, la monnaie gagnée à chaque minute passée sur ECAY (double gain en écoutant, bonus horaire de fidélité, rattrapage d’absence). Activation en un clic depuis Ma collection, et onglet « Ajouter une DLL » pour importer ses propres modules d’effets au format JSON. Le tout s’applique à toute la musique jouée, en plus des effets existants."
+  "version": "2.6.1",
+  "url": "https://github.com/yuzrey2706/ecay/releases/download/v2.6.1/ECAY-Setup-2.6.1.exe",
+  "notes": "ECAY 2.6.1 — interfaces professionnelles et installation visible. La Boutique DLL passe en mode pro : hero avec solde et statistiques, barre de filtres par famille d’effets (Basse, Distorsion, Réverb, Tempo…), cartes refondues avec chips et état « en cours ». Le panneau Amis gagne une loupe, des actions au survol et des finitions visuelles. Nouveau : la mise à jour affiche une fenêtre centrée façon installateur — barre de progression, étapes cochables (téléchargement, vérification, préparation, installation, redémarrage) et notes de la version, avec une durée minimale pour que l’installation se voie vraiment. Correction de la mise à jour en direct du solde ECAZY et de l’état des DLL."
 }
