@@ -1,14 +1,19 @@
-IyBFQ0FZCgpUZWxlY2hhcmdldXIgb2ZmaWNpZWwgZGUgKipFQ0FZKiosIGxl
-Y3RldXIgbXVzaWNhbCBwb3VyIFdpbmRvd3MuCgpDZSBkZXBvdCBuZSBjb250
-aWVudCBxdWUgbGVzIGJpbmFpcmVzIHB1YmxpZXMgOiBsZSBjb2RlIHNvdXJj
-ZSBuIHkgZmlndXJlIHBhcy4KCiMjIERlcm5pZXJlIHZlcnNpb24KCioqMS45
-LjIqKgoKIyMgSW5zdGFsbGF0aW9uCgoxLiBPdXZyZXogbGEgcGFnZSBbUmVs
-ZWFzZXNdKGh0dHBzOi8vZ2l0aHViLmNvbS95dXpyZXkyNzA2L2VjYXkvcmVs
-ZWFzZXMpLgoyLiBUZWxlY2hhcmdleiBsZSBmaWNoaWVyIEVDQVktU2V0dXAt
-MS45LjIuZXhlLgozLiBMYW5jZXotbGUgOiBjIGVzdCB0ZXJtaW5lLCBhdWN1
-biBjb21wdGUgcmVxdWlzLgoKIyMgTWlzZSBhIGpvdXIgYXV0b21hdGlxdWUK
-CkwgYXBwbGljYXRpb24gaW50ZXJyb2dlIFtsZSBmbHV4IGRlIHZlcnNpb25d
-KGh0dHBzOi8vZ2l0aHViLmNvbS95dXpyZXkyNzA2L2VjYXkvcmVsZWFzZXMv
-bGF0ZXN0L2Rvd25sb2FkL3ZlcnNpb24uanNvbikgYSBjaGFxdWUgbGFuY2Vt
-ZW50IGV0IHByb3Bvc2UgZWxsZS1tZW1lIGxhIG5vdXZlbGxlIHZlcnNpb24u
+﻿# ECAY
 
+Telechargeur officiel de **ECAY**, lecteur musical pour Windows.
+
+Ce depot ne contient que les binaires publies : le code source n y figure pas.
+
+## Derniere version
+
+**1.9.2**
+
+## Installation
+
+1. Ouvrez la page [Releases](https://github.com/yuzrey2706/ecay/releases).
+2. Telechargez le fichier ECAY-Setup-1.9.2.exe.
+3. Lancez-le : c est termine, aucun compte requis.
+
+## Mise a jour automatique
+
+L application interroge [le flux de version](https://github.com/yuzrey2706/ecay/releases/latest/download/version.json) a chaque lancement et propose elle-meme la nouvelle version.
