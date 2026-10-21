@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
-  "url": "https://github.com/yuzrey2706/ecay/releases/download/v2.0.0/ECAY-Setup-2.0.0.exe",
-  "notes": "Grand numéro rond : ECAY retrouve son nom et son logo partout. Trois nouveautés. Thème clair — Réglages → Apparence → Mode : Sombre, Clair ou Système (la couleur suit Windows) ; voile laiteux et verre blanc, ton image de fond reste intacte. Carte de partage — le bouton 🖼 de la barre du bas et celui des lignes dessinent un carré 1080×1080 avec la pochette, le titre et l’artiste, et te laissent l’enregistrer où tu veux (le dialogue est celui de Windows). Webradios — neuf stations en direct dans le menu latéral, flux publics sans compte ni clé, et la barre de progression reste propre sur un flux sans fin."
+  "version": "2.5.0",
+  "url": "https://github.com/yuzrey2706/ecay/releases/download/v2.5.0/ECAY-Setup-2.5.0.exe",
+  "notes": "NOVA refonte ECAY de fond en comble — trois grandes nouveautés. L'IA compose avec toi : un assistant de composition en langage naturel « un drill sombre à 130 BPM sur la pluie » qui règle style, humeur, tempo, durée et thème, puis lance la génération d’un clic. Mes œuvres : chaque composition est sauvegardée automatiquement (graine, paroles, pochette) dans une galerie d’où l’on peut régénérer ou reprendre une œuvre à l’identique. Amis : le bouton 👥 en haut à droite ouvre un panneau façon Discord — statuts en ligne / absent / hors ligne, recherche par @, demandes d’amitié et conversations privées avec badge de non-lus. Au menu aussi : stems d’accompagnement et voix a cappella pour le karaoké, interface entièrement en français, thèmes préservés."
 }
