@@ -1,5 +1,5 @@
 {
-  "version": "2.5.0",
-  "url": "https://github.com/yuzrey2706/ecay/releases/download/v2.5.0/ECAY-Setup-2.5.0.exe",
-  "notes": "NOVA refonte ECAY de fond en comble — trois grandes nouveautés. L'IA compose avec toi : un assistant de composition en langage naturel « un drill sombre à 130 BPM sur la pluie » qui règle style, humeur, tempo, durée et thème, puis lance la génération d’un clic. Mes œuvres : chaque composition est sauvegardée automatiquement (graine, paroles, pochette) dans une galerie d’où l’on peut régénérer ou reprendre une œuvre à l’identique. Amis : le bouton 👥 en haut à droite ouvre un panneau façon Discord — statuts en ligne / absent / hors ligne, recherche par @, demandes d’amitié et conversations privées avec badge de non-lus. Au menu aussi : stems d’accompagnement et voix a cappella pour le karaoké, interface entièrement en français, thèmes préservés."
+  "version": "2.5.1",
+  "url": "https://github.com/yuzrey2706/ecay/releases/download/v2.5.1/ECAY-Setup-2.5.1.exe",
+  "notes": "Hotfix 2.5.1 — ECAY se rouvre à chaque lancement. Correction du bloquage où l'application ne voulait plus se rouvrir après fermeture (la fenêtre d'overlay en survie empêchait le processus de s'éteindre et le lancement suivant était avalé en silence) : fermeture propre garantie et réouverture immédiate. Au passage : nouvelles cartes de la page Équipe (DECAY & AZE), panneau Amis refondu (avatars sur les bulles, séparateurs de jour, heures des conversations, compteur en ligne), export MIDI des compositions IA, notifications en arrière-plan pour les messages et demandes d'amitié, et CESKA retiré de l'équipe."
 }
