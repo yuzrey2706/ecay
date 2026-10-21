@@ -1,5 +1,5 @@
 {
-  "version": "2.5.1",
-  "url": "https://github.com/yuzrey2706/ecay/releases/download/v2.5.1/ECAY-Setup-2.5.1.exe",
-  "notes": "Hotfix 2.5.1 — ECAY se rouvre à chaque lancement. Correction du bloquage où l'application ne voulait plus se rouvrir après fermeture (la fenêtre d'overlay en survie empêchait le processus de s'éteindre et le lancement suivant était avalé en silence) : fermeture propre garantie et réouverture immédiate. Au passage : nouvelles cartes de la page Équipe (DECAY & AZE), panneau Amis refondu (avatars sur les bulles, séparateurs de jour, heures des conversations, compteur en ligne), export MIDI des compositions IA, notifications en arrière-plan pour les messages et demandes d'amitié, et CESKA retiré de l'équipe."
+  "version": "2.6.0",
+  "url": "https://github.com/yuzrey2706/ecay/releases/download/v2.6.0/ECAY-Setup-2.6.0.exe",
+  "notes": "ECAY 2.6.0 — la Boutique DLL et la monnaie ECAZY. Un nouvel univers où plus tu restes sur l’application, plus tu gagnes : 18 DLL officielles (Basse Profonde offerte, Sub Titanic, Métal Enfer, Stade Géant, Cave du Dragon, Nightcore Extrême, Slowed + Reverb, Bitcrusher 8-bit…) achetables en ECAZY, la monnaie gagnée à chaque minute passée sur ECAY (double gain en écoutant, bonus horaire de fidélité, rattrapage d’absence). Activation en un clic depuis Ma collection, et onglet « Ajouter une DLL » pour importer ses propres modules d’effets au format JSON. Le tout s’applique à toute la musique jouée, en plus des effets existants."
 }
